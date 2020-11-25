@@ -1,9 +1,8 @@
 package com.company;
 
 public class BankAccount {
+
     double amount;
-
-
 
 
     public int getAmount() {

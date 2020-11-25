@@ -13,11 +13,11 @@ public class Main {
 
 
         while (true) {
+            System.out.println("Запрашиваемая к выдаче сумма: " );
 
             try {
-                Scanner sc = new Scanner();
+                Scanner sc = new Scanner(System.in);
                 int sum = sc.nextInt();
-                System.out.println("Запрашиваемая сумма: " + sum);
 
                 Klient1.withDraw(sum);
 
