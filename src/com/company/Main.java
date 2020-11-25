@@ -4,33 +4,29 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExeption {
 
-        BankAccount Klient1 = new BankAccount("Счет",20.000);
+        BankAccount Klient1 = new BankAccount();
 
-        Scanner sc = new Scanner(System.in);
+        Klient1.deposit(20000);
+        System.out.println("Ваш счет:  " + Klient1.getAmount() + "сом");
+
 
         while (true) {
-            System.out.println("Сумма на счете:"+Klient1.getRemainingAmount());
-            System.out.println("Введите сумму к выдаче:");
 
+            try {
+                Scanner sc = new Scanner();
+                int sum = sc.nextInt();
+                System.out.println("Запрашиваемая сумма: " + sum);
 
-             try {
-                 int sum=sc.nextInt();
-                 Klient1.setAmount(20.000);
-                 Klient1.setSum(6000);
-             }
-             catch (LimitExeption exeption){
+                Klient1.withDraw(sum);
 
-                 System.out.println("  Вы можете получить остаток средств:" + getRemainingAmount());
-                 System.out.println("Введите сумму к выдаче:");
-                 int sum=sc.nextInt();
-                 withDraw();
-
-
-            };
-
+            }
+            catch (LimitExeption exeption) {
+                System.out.println(exeption.getMessage());
+                Klient1.withDraw(Klient1.getAmount());
+                break;
+            }
         }
-
     }
 }

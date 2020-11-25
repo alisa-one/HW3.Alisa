@@ -2,16 +2,12 @@ package com.company;
 
 public class BankAccount {
     double amount;
-    int sum;
 
 
-    public BankAccount(String message, double remainingAmount) {
 
-        super(message, remainingAmount);
-    }
 
-    public double getAmount() {
-        return amount;
+    public int getAmount() {
+        return (int) amount;
     }
 
 
@@ -20,26 +16,19 @@ public class BankAccount {
 
     }
 
-    public int getSum() {
 
-        return sum;
+    public void deposit(int sum) {
+
+        amount = amount + sum;
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
-    }
-
-    public double deposit(double sum) {
-
-        return amount + sum;
-    }
-
-    public double withDraw(int sum) {
-        if (sum>amount){
-            throw new LimitExeption(String message,double remainingAmount);
+    public void withDraw(int sum) throws LimitExeption {
+        if (sum >( int) (amount)) {
+            String message = "Запрашиваемая сумма выше остатка на счете";
+            throw new LimitExeption(message, sum);
         }
-
-        return amount - sum;
+        amount = amount - sum;
+        System.out.println("Снята сумма:"+sum);
 
     }
 
