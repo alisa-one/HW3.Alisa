@@ -1,19 +1,12 @@
 package com.company;
 
-public class BankAccount extends LimitExeption{
+public class BankAccount {
+    double amount;
+    int sum;
 
-
-
-
-
-    public  BankAccount() {
-        super.getAmount;
-        super.getSum;
-        super.getRemainingAmount();
-
-    }
 
     public BankAccount(String message, double remainingAmount) {
+
         super(message, remainingAmount);
     }
 
@@ -21,11 +14,14 @@ public class BankAccount extends LimitExeption{
         return amount;
     }
 
+
     public void setAmount(double amount) {
         this.amount = amount;
+
     }
 
     public int getSum() {
+
         return sum;
     }
 
@@ -34,13 +30,19 @@ public class BankAccount extends LimitExeption{
     }
 
     public double deposit(double sum) {
+
         return amount + sum;
     }
 
     public double withDraw(int sum) {
+        if (sum>amount){
+            throw new LimitExeption(String message,double remainingAmount);
+        }
 
         return amount - sum;
 
     }
+
+
 }
 

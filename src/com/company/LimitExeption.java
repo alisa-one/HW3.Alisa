@@ -2,24 +2,27 @@ package com.company;
 
 public class LimitExeption extends Exception {
 
+
     String message;
-    double amount;
-    int sum;
+
     double remainingAmount;
 
 
     public LimitExeption(String message, double remainingAmount) {
-        super(message);
-
-        if (sum > remainingAmount) {
-            System.out.println("Сумма запроса к выдаче  больше остатка средств на счете");
-            System.out.println("Остаток средств:" + getRemainingAmount());
-        }
+        super(message= "ВВеденная сумма превышает остаток средств на счете");
 
     }
 
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
     public double getRemainingAmount() {
-        remainingAmount = amount - sum;
+        remainingAmount = (double)(amount - sum);
         return remainingAmount;
     }
 }
