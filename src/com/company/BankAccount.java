@@ -1,12 +1,36 @@
 package com.company;
 
-public class BankAccount {
+public class BankAccount extends LimitExeption{
 
-    double amount;
-    int sum;
+
+
+
+
+    public  BankAccount() {
+        super.getAmount;
+        super.getSum;
+        super.getRemainingAmount();
+
+    }
+
+    public BankAccount(String message, double remainingAmount) {
+        super(message, remainingAmount);
+    }
 
     public double getAmount() {
         return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
     }
 
     public double deposit(double sum) {
@@ -14,11 +38,8 @@ public class BankAccount {
     }
 
     public double withDraw(int sum) {
-        if (sum > amount) {
 
-            BankAccount drow = new LimitExeption(String message, double remainingAmount);
-        } else
-        {return  amount - sum;    }
+        return amount - sum;
 
     }
 }
