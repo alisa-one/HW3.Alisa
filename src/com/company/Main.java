@@ -9,11 +9,16 @@ public class Main {
         BankAccount Klient1 = new BankAccount();
 
         Klient1.deposit(20000);
-        System.out.println("Ваш счет:  " + Klient1.getAmount() + "сом");
+
+        System.out.println("Ваш текущий счет:  " + Klient1.getAmount() + " сом");
+        System.out.println("Вносимая на счет сумма (сом):  ");
+        Scanner AddSum = new Scanner(System.in);
+        int AddSumm = AddSum.nextInt();
+        Klient1.deposit(AddSumm);
 
 
         while (true) {
-            System.out.println("Запрашиваемая к выдаче сумма: " );
+            System.out.println("Запрашиваемая к выдаче сумма(сом) :  ");
 
             try {
                 Scanner sc = new Scanner(System.in);

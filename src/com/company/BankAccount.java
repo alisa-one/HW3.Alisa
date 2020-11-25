@@ -2,6 +2,7 @@ package com.company;
 
 public class BankAccount {
 
+     double AddSumm ;
     double amount;
 
 
@@ -16,9 +17,9 @@ public class BankAccount {
     }
 
 
-    public void deposit(int sum) {
+    public void deposit(double AddSumm) {
 
-        amount = amount + sum;
+        amount = amount +AddSumm;
     }
 
     public void withDraw(int sum) throws LimitExeption {
