@@ -2,8 +2,8 @@ package com.company;
 
 public class BankAccount {
 
-     double AddSumm ;
-    double amount;
+     int AddSumm ;
+    int amount;
 
 
     public int getAmount() {
@@ -11,13 +11,13 @@ public class BankAccount {
     }
 
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
 
     }
 
 
-    public void deposit(double AddSumm) {
+    public void deposit(int AddSumm) {
 
         amount = amount +AddSumm;
     }
@@ -29,6 +29,8 @@ public class BankAccount {
         }
         amount = amount - sum;
         System.out.println("Снята сумма:"+sum);
+        System.out.println("-------------------------------------");
+
 
     }
 
